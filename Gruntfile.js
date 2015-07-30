@@ -9,7 +9,10 @@ module.exports = function(grunt) {
       // },
       dist: {
         src: [
-          'public/lib/*.js'
+          'public/lib/underscore.js',
+          'public/lib/jquery.js',
+          'public/lib/backbone.js',
+          'public/lib/handlebars.js'
         ],
         dest: 'production.js',
       }
