@@ -4,9 +4,9 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       //not sure if needed
-      // options: {
-      //   separator: ''
-      // },
+      options: {
+        separator: ';'
+      },
       dist: {
         src: [
           'public/lib/underscore.js',
