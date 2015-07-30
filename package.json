@@ -9,7 +9,7 @@
   "dependencies": {
     "knex": "~0.5.7",
     "bookshelf": "~0.6.4",
-    "sqlite3": "^3.0.9",
+    "sqlite3": "~2.2.0",
     "express": "~3.4.8",
     "express-partials": "~0.2.0",
     "ejs": "~0.8.5",
@@ -31,7 +31,6 @@
     "bluebird": "1.0.8"
   },
   "devDependencies": {
-    "grunt-shell": "^0.6.4",
     "supertest": "^0.10.0"
   }
 }

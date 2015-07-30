@@ -3,19 +3,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
-      //not sure if needed
-      options: {
-        separator: ';'
-      },
-      dist: {
-        src: [
-          'public/lib/underscore.js',
-          'public/lib/jquery.js',
-          'public/lib/backbone.js',
-          'public/lib/handlebars.js'
-        ],
-        dest: 'public/lib/production.js',
-      }
     },
 
     mochaTest: {
@@ -34,24 +21,18 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-      options: {
-        mangle: false
-      },
-      my_target: {
-        files: {
-          'public/lib/production.js': ['public/lib/production.js']
-        }
-      }
     },
 
     jshint: {
-      all: ['Gruntfile.js', '*.js', 'test/*.js', 'lib/*.js', 'app/*.js', 'app/**/*.js'],
+      files: [
+        // Add filespec list here
+      ],
       options: {
         force: 'true',
         jshintrc: '.jshintrc',
         ignores: [
-          'public/lib/*.js',
-          'public/dist/*.js'
+          'public/lib/**/*.js',
+          'public/dist/**/*.js'
         ]
       }
     },
@@ -78,7 +59,6 @@ module.exports = function(grunt) {
 
     shell: {
       prodServer: {
-        command: 'ls'
       }
     },
   });
@@ -118,7 +98,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
-      ['concat', 'uglify']
+      // add your production server task here
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
@@ -126,10 +106,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy', [
     // add your deploy tasks here
-    'concat',
-    'uglify'
   ]);
 
-// // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-//  grunt.registerTask('default', ['concat']);
+
 };
