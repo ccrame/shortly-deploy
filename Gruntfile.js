@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         src: [
           'public/lib/*.js'
         ],
-        dest: 'public/lib/production.js',
+        dest: 'production.js',
       }
     },
 
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
       },
       my_target: {
         files: {
-          '/public/lib/production.min.js': ['/public/lib/production.js']
+          'production.min.js': ['production.js']
         }
       }
     },
