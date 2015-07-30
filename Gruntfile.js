@@ -14,7 +14,7 @@ module.exports = function(grunt) {
           'public/lib/backbone.js',
           'public/lib/handlebars.js'
         ],
-        dest: 'production.js',
+        dest: 'public/lib/production.js',
       }
     },
 
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       },
       my_target: {
         files: {
-          'production.min.js': ['production.js']
+          'public/lib/production.js': ['public/lib/production.js']
         }
       }
     },
